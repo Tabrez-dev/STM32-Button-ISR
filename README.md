@@ -46,7 +46,7 @@ This project demonstrates a bare-metal implementation on an STM32 microcontrolle
 
 ### 1. Vector Table Configuration
 - **Reference:** [ARM Cortex-M0 Generic User Guide](https://www.keil.com/dd/docs/datashts/arm/cortex_m0p/r0p0/dui0662a_cortex_m0p_r0p0_dgug.pdf)
-- **Description:**  
+ 
   The vector table holds the addresses for all exception handlers (including the reset vector and ISR pointers). This is fundamental for the processor to correctly jump to the appropriate handler when an interrupt occurs.
   
 ![Vector Table Layout](https://github.com/user-attachments/assets/86b776d5-5fe5-4c1a-a6eb-fca785ca43e6)
@@ -56,7 +56,7 @@ This project demonstrates a bare-metal implementation on an STM32 microcontrolle
 
 ### 3. USART Configuration
 - **Reference:** STM32F072RB Datasheet
-- **Description:**  
+ 
   Configuring USART involves setting parameters such as baud rate and word length, and enabling the transmitter and receiver. This ensures proper serial communication over USART1.  
  ![image](https://github.com/user-attachments/assets/b256b618-a15c-4d72-8e01-8f53773c38ad)
 
@@ -64,8 +64,12 @@ This project demonstrates a bare-metal implementation on an STM32 microcontrolle
 
 ### 4. Configuring the Button and External Interrupt
 - **Reference:** RM0091 Documentation
-- **Description:**  
-  The external interrupt (EXTI) is configured to trigger on a button press. By mapping the EXTI line to a specific GPIO pin (PA0) and setting the trigger condition (e.g., rising edge), the system can respond immediately via the corresponding ISR.  
+
+  The external interrupt (EXTI) is configured to trigger on a button press. By mapping the EXTI line to a specific GPIO pin (PA0) and setting the trigger condition (e.g., rising edge), the system can respond immediately via the corresponding ISR.
+
+  ![image](https://github.com/user-attachments/assets/ecc9632e-05ea-46d8-b449-5f0beb7c8831)
+
+*From STM32F072RBT6-DISCO Board Schematic we see that PA0 is connected to the user button internally*
 
 ![image](https://github.com/user-attachments/assets/4439a036-c840-46ac-92bd-ff4358561b58)
 
