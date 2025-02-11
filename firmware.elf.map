@@ -1,0 +1,233 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+                              /tmp/ccmYtcJW.o (__aeabi_lmul)
+
+Discarded input sections
+
+ .group         0x0000000000000000        0xc /tmp/ccmYtcJW.o
+ .group         0x0000000000000000        0xc /tmp/ccmYtcJW.o
+ .text          0x0000000000000000        0x0 /tmp/ccmYtcJW.o
+ .data          0x0000000000000000        0x0 /tmp/ccmYtcJW.o
+ .bss           0x0000000000000000        0x0 /tmp/ccmYtcJW.o
+ .text.delay    0x0000000000000000        0x2 /tmp/ccmYtcJW.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000008000000 0x0000000000020000 xr
+SRAM             0x0000000020000000 0x0000000000004000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccmYtcJW.o
+LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
+                0x0000000020004000                _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
+
+.text           0x0000000008000000       0xec
+ *(.vectors)
+ .vectors       0x0000000008000000       0x9c /tmp/ccmYtcJW.o
+                0x0000000008000000                vector_table
+ *(.text)
+ .text          0x000000000800009c       0x50 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+                0x000000000800009c                __aeabi_lmul
+                0x000000000800009c                __muldi3
+ *(.rodata)
+
+.glue_7         0x00000000080000ec        0x0
+ .glue_7        0x00000000080000ec        0x0 linker stubs
+
+.glue_7t        0x00000000080000ec        0x0
+ .glue_7t       0x00000000080000ec        0x0 linker stubs
+
+.vfp11_veneer   0x00000000080000ec        0x0
+ .vfp11_veneer  0x00000000080000ec        0x0 linker stubs
+
+.v4_bx          0x00000000080000ec        0x0
+ .v4_bx         0x00000000080000ec        0x0 linker stubs
+
+.text.EXTI0_1_IRQHandler
+                0x00000000080000ec       0x1c
+ .text.EXTI0_1_IRQHandler
+                0x00000000080000ec       0x1c /tmp/ccmYtcJW.o
+                0x00000000080000ec                EXTI0_1_IRQHandler
+
+.text.Default_Handler
+                0x0000000008000108        0x2
+ .text.Default_Handler
+                0x0000000008000108        0x2 /tmp/ccmYtcJW.o
+                0x0000000008000108                HardFault_Handler
+                0x0000000008000108                SysTick_Handler
+                0x0000000008000108                PendSV_Handler
+                0x0000000008000108                NMI_Handler
+                0x0000000008000108                Default_Handler
+                0x0000000008000108                SVC_Handler
+
+.text.usart1_init
+                0x000000000800010c       0x84
+ .text.usart1_init
+                0x000000000800010c       0x84 /tmp/ccmYtcJW.o
+                0x000000000800010c                usart1_init
+
+.text.usart1_send_char
+                0x0000000008000190       0x1c
+ .text.usart1_send_char
+                0x0000000008000190       0x1c /tmp/ccmYtcJW.o
+                0x0000000008000190                usart1_send_char
+
+.text.usart1_send_string
+                0x00000000080001ac       0x14
+ .text.usart1_send_string
+                0x00000000080001ac       0x14 /tmp/ccmYtcJW.o
+                0x00000000080001ac                usart1_send_string
+
+.text.usart1_send_uint32
+                0x00000000080001c0       0x50
+ .text.usart1_send_uint32
+                0x00000000080001c0       0x50 /tmp/ccmYtcJW.o
+                0x00000000080001c0                usart1_send_uint32
+
+.text.button_init
+                0x0000000008000210       0x40
+ .text.button_init
+                0x0000000008000210       0x40 /tmp/ccmYtcJW.o
+                0x0000000008000210                button_init
+
+.text.startup.main
+                0x0000000008000250       0x44
+ .text.startup.main
+                0x0000000008000250       0x44 /tmp/ccmYtcJW.o
+                0x0000000008000250                main
+
+.text._reset    0x0000000008000294       0x3c
+ .text._reset   0x0000000008000294       0x3c /tmp/ccmYtcJW.o
+                0x0000000008000294                _reset
+
+.iplt           0x00000000080002d0        0x0
+ .iplt          0x00000000080002d0        0x0 /tmp/ccmYtcJW.o
+
+.rodata.main.str1.1
+                0x00000000080002d0       0x17
+ .rodata.main.str1.1
+                0x00000000080002d0       0x17 /tmp/ccmYtcJW.o
+
+.rel.dyn        0x00000000080002e8        0x0
+ .rel.iplt      0x00000000080002e8        0x0 /tmp/ccmYtcJW.o
+
+.data           0x0000000020000000       0x34 load address 0x00000000080002e7
+                0x0000000020000000                _sdata = .
+ *(.data SORT_BY_NAME(.data.*))
+ .data.pEXTI_IMR
+                0x0000000020000000        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000000                pEXTI_IMR
+ .data.pEXTI_PR
+                0x0000000020000004        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000004                pEXTI_PR
+ .data.pEXTI_RTSR
+                0x0000000020000008        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000008                pEXTI_RTSR
+ .data.pGPIOA_AFRH
+                0x000000002000000c        0x4 /tmp/ccmYtcJW.o
+                0x000000002000000c                pGPIOA_AFRH
+ .data.pGPIOA_MODER
+                0x0000000020000010        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000010                pGPIOA_MODER
+ .data.pNVIC_ISER
+                0x0000000020000014        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000014                pNVIC_ISER
+ .data.pRCC_AHBENR
+                0x0000000020000018        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000018                pRCC_AHBENR
+ .data.pRCC_APB2ENR
+                0x000000002000001c        0x4 /tmp/ccmYtcJW.o
+                0x000000002000001c                pRCC_APB2ENR
+ .data.pSYSCFG_EXTICR1
+                0x0000000020000020        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000020                pSYSCFG_EXTICR1
+ .data.pUSART1_BRR
+                0x0000000020000024        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000024                pUSART1_BRR
+ .data.pUSART1_CR
+                0x0000000020000028        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000028                pUSART1_CR
+ .data.pUSART1_ISR
+                0x000000002000002c        0x4 /tmp/ccmYtcJW.o
+                0x000000002000002c                pUSART1_ISR
+ .data.pUSART1_TDR
+                0x0000000020000030        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000030                pUSART1_TDR
+                0x0000000020000034                _edata = .
+                0x00000000080002e7                _srcdata = LOADADDR (.data)
+
+.igot.plt       0x0000000020000034        0x0 load address 0x000000000800031b
+ .igot.plt      0x0000000020000034        0x0 /tmp/ccmYtcJW.o
+
+.bss            0x0000000020000034        0x5 load address 0x000000000800031b
+                0x0000000020000034                _sbss = .
+ *(.bss SORT_BY_NAME(.bss.*) COMMON)
+ .bss.g_button_press_count
+                0x0000000020000034        0x4 /tmp/ccmYtcJW.o
+                0x0000000020000034                g_button_press_count
+ .bss.g_button_pressed
+                0x0000000020000038        0x1 /tmp/ccmYtcJW.o
+                0x0000000020000038                g_button_pressed
+                0x0000000020000039                _ebss = .
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x0000000000000000      0xfd3
+ .debug_info    0x0000000000000000      0x53d /tmp/ccmYtcJW.o
+ .debug_info    0x000000000000053d      0xa96 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_abbrev   0x0000000000000000      0x472
+ .debug_abbrev  0x0000000000000000      0x2cf /tmp/ccmYtcJW.o
+ .debug_abbrev  0x00000000000002cf      0x1a3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_loc      0x0000000000000000      0x344
+ .debug_loc     0x0000000000000000      0x1c5 /tmp/ccmYtcJW.o
+ .debug_loc     0x00000000000001c5      0x17f /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_aranges  0x0000000000000000       0x88
+ .debug_aranges
+                0x0000000000000000       0x68 /tmp/ccmYtcJW.o
+ .debug_aranges
+                0x0000000000000068       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_ranges   0x0000000000000000       0xe8
+ .debug_ranges  0x0000000000000000       0xa8 /tmp/ccmYtcJW.o
+ .debug_ranges  0x00000000000000a8       0x40 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_macro    0x0000000000000000      0xdda
+ .debug_macro   0x0000000000000000       0x1a /tmp/ccmYtcJW.o
+ .debug_macro   0x000000000000001a      0xa72 /tmp/ccmYtcJW.o
+ .debug_macro   0x0000000000000a8c      0x34e /tmp/ccmYtcJW.o
+
+.debug_line     0x0000000000000000      0x4dd
+ .debug_line    0x0000000000000000      0x327 /tmp/ccmYtcJW.o
+ .debug_line    0x0000000000000327      0x1b6 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_str      0x0000000000000000     0x4916
+ .debug_str     0x0000000000000000     0x37d2 /tmp/ccmYtcJW.o
+                                       0x393a (size before relaxing)
+ .debug_str     0x00000000000037d2     0x1144 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+                                       0x11cb (size before relaxing)
+
+.comment        0x0000000000000000       0x59
+ .comment       0x0000000000000000       0x59 /tmp/ccmYtcJW.o
+                                         0x5a (size before relaxing)
+ .comment       0x0000000000000059       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.ARM.attributes
+                0x0000000000000000       0x2c
+ .ARM.attributes
+                0x0000000000000000       0x2c /tmp/ccmYtcJW.o
+ .ARM.attributes
+                0x000000000000002c       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
+
+.debug_frame    0x0000000000000000      0x108
+ .debug_frame   0x0000000000000000       0xd4 /tmp/ccmYtcJW.o
+ .debug_frame   0x00000000000000d4       0x34 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
