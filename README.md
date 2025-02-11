@@ -108,3 +108,42 @@ As seen using minicom serial interface
 ![image](https://github.com/user-attachments/assets/cfea4bd8-db75-4fe9-b6b1-2cf4068a6509)
 
 
+## Challenges and Solutions
+
+Throughout the development of this STM32 Button ISR project, several challenges were encountered and resolved:
+
+- **Unpredictable Data/BSS Layout Without SORT**  
+  **Problem:** With compiler flags like `-ffunction-sections` and `-fdata-sections`, each function and variable ended up in its own subsection (e.g. `.data.foo`, `.bss.bar`). When simply using wildcards (e.g. `*(.data)`) in the linker script, the ordering was unpredictable. This led to an incomplete copy of the initialized data and an incomplete zeroing of the uninitialized data (BSS). As a result, global variables (such as the button press counter) were not reset properly, and sometimes a hard fault occurred.  
+  **Resolution:** Modified the .data and .bss sections to include the `SORT()` operator (for example, `*(.data SORT(.data.*))` and `*(.bss SORT(.bss.*) COMMON)`). This forced a predictable, contiguous layout so that the startup code correctly copies all of .data from flash and zeros all of .bss.
+
+- **Vector Table Misconfiguration:**  
+  - **Issue:** The vector table was not being placed at the expected memory location.  
+  - **Cause:** The section name used for the vector table (e.g., `.vector`) did not match the section specified in the linker script.  
+  - **Resolution:** Updated the section attribute in the vector table to match the linker script (e.g., `.vectors`).
+
+- **UART Baud Rate Mismatch:**  
+  - **Issue:** When both UART and button functionalities were enabled, the USART output was garbled.  
+  - **Cause:** A mismatch between the configured baud rate on the STM32 and the baud rate set in the terminal, likely due to an incorrect calculation of the BRR value.  
+  - **Resolution:** Recalculated the baud rate register (BRR) value based on the actual peripheral clock frequency and ensured that the terminal settings matched.  
+    - For example, for an 8 MHz clock and 115200 bps, the BRR value was set appropriately, and the system clock configuration was verified.
+
+- **EXTI and NVIC Configuration:**  
+  - **Issue:** The button press interrupt (EXTI0_1) was triggering the Default_Handler instead of the correct interrupt service routine.  
+  - **Cause:** Issues with EXTI configuration or the vector table entry for the button interrupt, including improper clearing of the pending flag.  
+  - **Resolution:**  
+    - Verified that SYSCFG_EXTICR1 correctly mapped EXTI0 to Port A.  
+    - Ensured that EXTI_RTSR and EXTI_IMR were correctly configured.  
+    - Modified the EXTI0_1 IRQ handler to clear the pending flag properly and set the button-pressed flag.
+    - Placed the EXTI int the correct postition in the vector table (index 21) by looking at vector table in the cortex m0 user guide
+
+- **Debugging and Flash Issues:**  
+  - **Issue:** Debugging with SEGGER Ozone revealed issues like missing DWARF debug information and flash content mismatches.  
+  - **Cause:** Incorrect linker script entry point 
+  - **Resolution:** Updated the linker script to correctly point to startingof the program i.e Reset handler
+
+- **USART Data Representation:**  
+  - *Problem:* Directly sending integers over USART transmitted raw binary data (non-printable characters) rather than human-readable digits.  
+  - *Solution:* Implemented custom conversion functions (`div10` and `mod10`) to convert a 32-bit integer into an ASCII string, ensuring that numbers appear correctly in the terminal.
+
+These solutions not only resolved the immediate issues but also contributed to a more robust understanding of bare-metal STM32 programming.
+
